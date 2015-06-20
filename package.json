@@ -23,7 +23,13 @@
   "keywords": [
     "cli-app",
     "cli",
-    ""
+    "github",
+		"gist",
+		"api",
+		"owner",
+		"username",
+		"id",
+		"v3"
   ],
   "dependencies": {
     "meow": "^3.0.0",

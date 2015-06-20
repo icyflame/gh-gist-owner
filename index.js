@@ -1,10 +1,17 @@
 'use strict';
 module.exports = function (str, opts) {
-	if (typeof str !== 'string') {
-		throw new TypeError('Expected a string');
-	}
 
-	opts = opts || {};
+	var request = require('sync-request');
 
-	return str + ' & ' + (opts.postfix || 'rainbows');
+	var options_obj = { 
+		'headers': {
+			'user-agent': 'http://github.com/icyflame/gh-gist-owner'
+		}
+	};
+	var res = request('GET', 'https://api.github.com/gists/' + str, options_obj);
+
+	var body = JSON.parse(res.getBody());
+
+	return body.owner.login;
+
 };

@@ -1,6 +1,6 @@
 # gh-gist-owner [![Build Status](https://travis-ci.org/icyflame/gh-gist-owner.svg?branch=master)](https://travis-ci.org/icyflame/gh-gist-owner)
 
-> My perfect module
+> Get the owner of any gist-id
 
 
 ## Install
@@ -15,8 +15,10 @@ $ npm install --save gh-gist-owner
 ```js
 var ghGistOwner = require('gh-gist-owner');
 
-ghGistOwner('unicorns');
-//=> unicorns & rainbows
+ghGistOwner('gist-id');
+// owner-github-username
+ghGistOwner('420166ca54b7afe55476');
+//=> icyflame
 ```
 
 
@@ -28,40 +30,31 @@ $ npm install --global gh-gist-owner
 ```
 $ gh-gist-owner --help
 
+  Get the owner of a gist from the CLI, or node.
+
   Usage
-    gh-gist-owner [input]
+    $ gh-gist-owner [input]
 
-  Example
-    gh-gist-owner
-    unicorns & rainbows
+  Examples
+    $ gh-gist-owner 420166ca54b7afe55476
+    GitHub username: icyflame
 
-    gh-gist-owner ponies
-    ponies & rainbows
-
-  Options
-    --foo  Lorem ipsum. Default: false
 ```
 
 
 ## API
 
-### ghGistOwner(input, [options])
+### ghGistOwner(gist_id)
 
-#### input
+#### gist_id
 
 *Required*  
 Type: `string`
 
-Lorem ipsum.
+ID of the gist 
+Something like 420166ca54b7afe55476, which can be found at
 
-#### options
-
-##### foo
-
-Type: `boolean`  
-Default: `false`
-
-Lorem ipsum.
+https://gist.github.com/icyflame/420166ca54b7afe55476
 
 
 ## License

@@ -5,19 +5,16 @@ var ghGistOwner = require('./');
 
 var cli = meow({
 	help: [
-		'Usage',
+	'Usage',
 		'  $ gh-gist-owner [input]',
 		'',
 		'Examples',
-		'  $ gh-gist-owner',
-		'  unicorns & rainbows',
-		'',
-		'  $ gh-gist-owner ponies',
-		'  ponies & rainbows',
-		'',
-		'Options',
-		'  --foo  Lorem ipsum. Default: false'
+		'  $ gh-gist-owner 420166ca54b7afe55476',
+		'  GitHub username: icyflame'
 	].join('\n')
 });
 
-console.log(ghGistOwner(cli.input[0] || 'unicorns'));
+if(cli.input.length < 1)
+	console.log("You must provide the gist ID as a CLI argument");
+else
+	console.log("GitHub username: " + ghGistOwner(cli.input[0]));

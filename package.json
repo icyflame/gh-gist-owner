@@ -1,7 +1,7 @@
 {
   "name": "gh-gist-owner",
   "version": "0.0.0",
-  "description": "My perfect module",
+  "description": "Get the owner of a gist from the CLI, or node.",
   "license": "MIT",
   "repository": "icyflame/gh-gist-owner",
   "author": {
@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "meow": "^3.0.0",
-    "request-json": "^0.5.3"
+    "sync-request": "^2.0.1"
   },
   "devDependencies": {
     "mocha": "*"

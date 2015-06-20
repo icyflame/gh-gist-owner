@@ -1,0 +1,35 @@
+{
+  "name": "gh-gist-owner",
+  "version": "0.0.0",
+  "description": "My perfect module",
+  "license": "MIT",
+  "repository": "icyflame/gh-gist-owner",
+  "author": {
+    "name": "Siddharth Kannan",
+    "email": "kannan.siddharth12@gmail.com",
+    "url": "icyflame.github.io"
+  },
+  "bin": "cli.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    ""
+  ],
+  "dependencies": {
+    "meow": "^3.0.0",
+    "request-json": "^0.5.3"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "gh-gist-owner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get the owner of a gist from the CLI, or node.",
   "license": "MIT",
   "repository": "icyflame/gh-gist-owner",
@@ -24,12 +24,12 @@
     "cli-app",
     "cli",
     "github",
-		"gist",
-		"api",
-		"owner",
-		"username",
-		"id",
-		"v3"
+    "gist",
+    "api",
+    "owner",
+    "username",
+    "id",
+    "v3"
   ],
   "dependencies": {
     "meow": "^3.0.0",

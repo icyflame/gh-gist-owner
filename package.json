@@ -14,7 +14,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "semistandard && mocha"
   },
   "files": [
     "index.js",
@@ -36,6 +36,7 @@
     "sync-request": "^2.0.1"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "semistandard": "^6.1.1"
   }
 }

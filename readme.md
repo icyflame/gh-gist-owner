@@ -1,7 +1,10 @@
-# gh-gist-owner [![Build Status](https://travis-ci.org/icyflame/gh-gist-owner.svg?branch=master)](https://travis-ci.org/icyflame/gh-gist-owner)
+# gh-gist-owner
 
 > Get the owner of any gist-id
 
+[![Build Status](https://travis-ci.org/icyflame/gh-gist-owner.svg?branch=master)](https://travis-ci.org/icyflame/gh-gist-owner)
+
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard)
 
 ## Install
 
@@ -51,7 +54,7 @@ $ gh-gist-owner --help
 *Required*  
 Type: `string`
 
-ID of the gist 
+ID of the gist
 Something like 420166ca54b7afe55476, which can be found at
 
 https://gist.github.com/icyflame/420166ca54b7afe55476

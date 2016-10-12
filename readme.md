@@ -18,10 +18,15 @@ $ npm install --save gh-gist-owner
 ```js
 var ghGistOwner = require('gh-gist-owner');
 
-ghGistOwner('gist-id');
-// owner-github-username
-ghGistOwner('420166ca54b7afe55476');
+ghGistOwner('420166ca54b7afe55476'); // or ghGistOwner.sync
 //=> icyflame
+
+ghGistOwner.async(
+  '420166ca54b7afe55476',
+  function (err, user) {
+    //=> user = icyflame
+  }
+);
 ```
 
 
@@ -47,18 +52,27 @@ $ gh-gist-owner --help
 
 ## API
 
-### ghGistOwner(gist_id)
+### `ghGistOwner(gist_id)` / `ghGistOwner.sync(gist_id)`
 
-#### gist_id
+#### `gist_id`
 
-*Required*  
 Type: `string`
 
-ID of the gist
-Something like 420166ca54b7afe55476, which can be found at
+ID of the gist. Something like [`420166ca54b7afe55476`](https://gist.github.com/icyflame/420166ca54b7afe55476)
 
-https://gist.github.com/icyflame/420166ca54b7afe55476
+### `ghGistOwner.async(gist_id, callback)`
 
+#### `gist_id`
+
+Type: `string`
+
+ID of the gist. Something like [`420166ca54b7afe55476`](https://gist.github.com/icyflame/420166ca54b7afe55476)
+
+#### `callback`
+
+Type: `function`
+
+This should take two arguments: `err` and `user`, where `err` is the request error (or `null` if everything worked), and `user` is the name of the gist owner.
 
 ## License
 

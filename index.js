@@ -1,16 +1,37 @@
 'use strict';
-module.exports = function (str, opts) {
-  var request = require('sync-request');
 
-  var options_obj = {
-    'headers': {
-      'user-agent': 'http://github.com/icyflame/gh-gist-owner'
-    }
-  };
-  var res = request('GET', 'https://api.github.com/gists/' + str, options_obj);
+var asyncRequest = require('then-request');
+var syncRequest = require('sync-request');
 
-  var body = JSON.parse(res.getBody());
+var options = {
+  'headers': {
+    'user-agent': 'http://github.com/icyflame/gh-gist-owner'
+  }
+};
 
-  return body.owner.login;
+var url = function (id) {
+  return 'https://api.github.com/gists/' + id;
+};
 
+module.exports = function (str) {
+  var res = syncRequest('GET', url(str), options);
+  return JSON.parse(res.getBody()).owner.login;
+};
+
+module.exports.sync = module.exports;
+
+module.exports.async = function (str, cb) {
+  asyncRequest(
+    'GET',
+    url(str),
+    options,
+    function (err, res) {
+      var data = err
+        ? null
+        : JSON.parse(
+            res.getBody()
+        ).owner.login;
+
+      cb(err, data);
+    });
 };
